@@ -343,7 +343,6 @@
 
         ComSender.addEventListener("click", (e) => {
             ComContent = ComToAdd.value;
-            console.log(ComContent);
             var Template = `<div class="Comment">
                                 <div class="IMG">
                                     <img src="Media/person.svg" alt="">
@@ -352,12 +351,7 @@
                                     <h4>${ComContent}</h4>
                                 </div>
                             </div>`;
-            // Add.innerHtml = Template;
-            // console.log(Add);
-            // console.log(Add.innerHtml);
-
-            var div = Object.create("div");
-            div.className = 
+            Add.innerHTML += Template;
         })
 
 
