@@ -1,0 +1,623 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --Red: #e3311d;
+    --black1: #050507;
+    --black2: #362e2d;
+    --black3: #7c8685;
+    --black4: #aaaca1;
+    --White: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Instrument Sans", sans-serif;
+}
+
+body {
+    background-color: var(--black1);
+}
+
+.Header {
+    width: 100%;
+    background-color: var(--Red);
+}
+
+.Header .Container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1em;
+    align-items: center;
+    row-gap: 1em;
+}
+
+.Header .Container .logo a {
+    font-size: 2em;
+    text-decoration: none;
+    color: #050507;
+}
+
+.Header .Container .NavBar {
+    width: 28rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header .Container .NavBar .NavMenu {
+    width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header .Container .NavBar .NavMenu a,
+.Header .Container .NavBar .NavMenu h4,
+.Header .Container .NavBar .NavMenu label {
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: none;
+    color: #050507;
+}
+
+.Header .Container .NavBar .NavMenu select {
+    border-radius: 1em;
+    background-color: var(--black4);
+    color: #050507;
+}
+
+.Header .Container .NavBar .Icons {
+    width: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.Header .Container .NavBar .Icons input {
+    display: none;
+}
+
+.Header .Container .NavBar .Icons label {
+    position: relative;
+    cursor: pointer;
+}
+
+.Header .Container .NavBar .Icons #Night {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.Header .Container .NavBar .Icons .SVG #Search {
+    display: none;
+}
+
+.Header .Container .NavBar .Icons .SVG #SearchIcon {
+    cursor: pointer;
+}
+
+.Header .SearchBar {
+    width: 100%;
+    display: block;
+    position: relative;
+    display: none;
+}
+
+.Header .SearchBar form {
+    display: flex;
+    border-radius: 10%;
+}
+
+.Header .SearchBar form button {
+    color: #050507;
+    background-color: var(--White);
+    padding: 1em;
+}
+
+.Header .SearchBar label {
+    background-color: var(--White);
+    border: .01em solid #050507;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header .SearchBar input {
+    width: 100%;
+    padding: 0.8em;
+    outline: none;
+}
+
+.Hide {
+    display: none;
+}
+
+.Footer {
+    width: 100%;
+    height: 40vh;
+    background: var(--Red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer .Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: .5em;
+}
+
+.Footer .Container .Top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    column-gap: 5em;
+    flex-wrap: wrap;
+}
+
+.Footer .Container .Top a {
+    text-decoration: none;
+}
+
+.Footer .Container .Top a h4 {
+    color: #050507;
+    width: fit-content;
+    font-weight: 300;
+}
+
+.Footer .Container .Bottom {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-top: .01em solid #050507;
+    padding-top: .5em;
+    row-gap: .5em;
+}
+
+.Footer .Container .Bottom .QuickAccess {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Footer .Container .Bottom .QuickAccess .column a {
+    text-decoration: none;
+}
+
+.Footer .Container .Bottom .QuickAccess .column h4 {
+    width: 100%;
+    font-weight: 300;
+    color: #050507;
+}
+
+.Footer .Container .Bottom .SocialMedia {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Footer .Container .Bottom .SocialMedia a svg {
+    width: 20px;
+    height: 20px;
+}
+
+.Footer .Container .Bottom .CopyRights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Footer .Container .Bottom .CopyRights h4 {
+    text-align: center;
+    font-weight: 300;
+    color: #050507;
+}
+
+/* main */
+.S1 {
+    width: 100%;
+    height: 80vh;
+    background: url(Media/Back1.jfif) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.S1 .Title {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.S1 .Title h2 {
+    color: var(--black3);
+    font-size: 2em;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.S1 .Content {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.S1 .Content .CardsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1em;
+    animation: CardsContainer infinite 60s;
+}
+
+.S1 .Content::-webkit-scrollbar {
+    width: 0;
+}
+
+.S1 .Content .CardsContainer img{
+    height: 30em;
+    width: 30%;
+}
+
+.S1 .Content .CardsContainer img:hover {
+    transform: scale(0.8);
+    transition: all .5s;
+}
+
+.S1 .Content .btns {
+    position: absolute; 
+    z-index: 10; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 95%;
+}
+
+.S1 .Content .btns .SVG {
+    opacity: 0.8;
+}
+
+.S1 .Content .btns #Next {
+    rotate: 180deg;
+}
+
+.S1 .Content .btns .SVG:hover {
+    opacity: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+.S2 {
+    width: 100%;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.S2 .Title {
+    width: 100%;
+}
+
+.S2 .Title .H2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.S2 .Title .H2 h2 {
+    font-style: italic;
+    color: var(--black3);
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.S2 .Cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 1em;
+    column-gap: 3em;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.S2 .Cards .Card {
+    position: relative;
+}
+
+.S2 .Cards .Card .IMG img {
+    width: 20rem;
+    height: 30rem;
+}
+
+.S2 .Cards .Card .Info {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.818);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: .3em;
+    opacity: 0;
+    top: 0;
+}
+
+.S2 .Cards .Card .Info a {
+    text-decoration: none;
+}
+
+.S2 .Cards .Card .Info h3 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.S2 .Cards .Card .Info h4 {
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+
+.S2 .Cards .Card .Info:hover {
+    opacity: .8;
+    transition: all .5s;
+}
+
+/* Details */
+.Details {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.Details .Poster {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5em;
+    row-gap: 1em;
+    position: relative;
+    z-index: 10;
+}
+
+.Details .Poster .IMG {
+    width: 80%;
+}
+
+.Details .Poster .IMG img {
+    width: 100%;
+}
+
+.btn button {
+    padding: 1.2em 2.5em;
+    background-color: var(--Red);
+    font-weight: 600;
+    color: var(--White);
+    border: none;
+    font-size: 1em;
+}
+
+.btn button:active {
+    transform: scale(.8);
+    transition: all .3s;
+}
+
+.Details .Poster .CommentSec {
+    width: 100%;
+    border-radius: 1em;
+    background-color: var(--black2);
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    row-gap: .3em;
+}
+
+.Details .Poster .CommentSec .HEADER {
+    width: 100%;
+    text-align: center;
+}
+
+.Details .Poster .CommentSec .Comments {
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+}
+
+.Details .Poster .CommentSec .Comments .Comment {
+    background: var(--black4);
+    border-radius: 1em;
+    padding: .5em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.Details .Poster .CommentSec .Comments .Comment .IMG {
+    width: 3em;
+    background-color: var(--White);
+    border-radius: 50%;
+    padding: .3em;
+    height: 100%;
+    width: 8%;
+}
+
+.Details .Poster .CommentSec .Comments .Comment .IMG img {
+    width: 100%;
+}
+
+.Details .Info {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1.5em 1em;
+}
+
+.Details .Info .Title h1 {
+    color: var(--White);
+    font-weight: 600;
+    font-size: 4em;
+}
+
+.Details .Info .FilmRate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .5em;
+}
+
+.Details .Info .FilmRate .Stars svg {
+    fill: yellow;
+}
+
+.Details .Info .FilmRate .LMDB {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .4em;
+}
+
+.Details .Info .FilmRate .LMDB #Rate {
+    color: var(--White);
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.Details .Info .FilmRate .LMDB #AllAge {
+    color: var(--black3);
+    font-size: 1.5em;
+}
+
+.Details .Info .Description {
+    width: 90%;
+    padding-top: 1em;
+}
+
+.Details .Info .Description h3 {
+    color: var(--White);
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.Details .Info .Genre {
+    padding-top: 1em;
+}
+
+.Details .Info .Genre h3 {
+    color: var(--White);
+    font-weight: 400;
+}
+
+.Details .Info .Genre span {
+    color: var(--Red);
+    font-weight: 600;
+}
+
+.Details .Info .btns {
+    padding-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .5em;
+}
+
+.Details .Info .btns .Like {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .3em;
+    user-select: none;
+}
+
+.Details .Info .btns .Like svg:active {
+    transform: scale(0.8);
+    transition: all .3s;
+}
+
+.Details .Info .btns h4 {
+    color: var(--White);
+    font-weight: 500;
+}
+
+.Details .Rating {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1.5em 1em;
+}
+
+.Details .Rating .TextArea textarea {
+    background-color: var(--black2);
+    border: .2em solid var(--Red);
+    resize: none;
+    width: 30em;
+    height: 15em;
+    border-radius: 10px;
+    padding: .5em;
+    color: var(--White);
+    font-size: 1.5em;
+}
+
+.Details .Rating .TextArea textarea::placeholder {
+    color: var(--White);
+    font-size: 1em;
+}
+
+.Details .Rating .RatingStars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    user-select: none;
+}
+
+.Details .Rating .RatingStars input {
+    display: none;
+}
+
+.Details .Rating .RatingStars label {
+    height: 100%;
+}
+
+.Details .Rating .RatingStars input:checked ~ label .star path {
+    fill: yellow;
+}
+
+.Details .Rating .RatingStars label:active {
+    transform: scale(.8);
+    transition: all .3s;
+}
+
+.Wait {
+    background-color: var(--black2);
+}
+
+.FavBtn {
+    cursor: pointer;
+    user-select: none;
+}
