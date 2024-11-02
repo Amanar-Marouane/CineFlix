@@ -132,6 +132,30 @@ body {
     outline: none;
 }
 
+@media (max-width: 640px) {
+    .Header .Container {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .Header .Container .NavBar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .Header .Container .NavBar {
+        flex-direction: column-reverse;
+        justify-content: center;
+        row-gap: 1em;
+    }
+
+    .Header .Container {
+        padding-bottom: 1em;
+    }
+}
+
 .Hide {
     display: none;
 }
@@ -219,6 +243,16 @@ body {
     color: #050507;
 }
 
+@media (max-width: 450px) {
+    .Footer .Container .Top {
+        width: 90%;
+    }
+
+    .Footer .Container .Bottom {
+        width: 90%;
+    }
+}
+
 /* main */
 .S1 {
     width: 100%;
@@ -265,9 +299,9 @@ body {
     width: 0;
 }
 
-.S1 .Content .CardsContainer img{
+.S1 .Content .CardsContainer img {
     height: 30em;
-    width: 30%;
+    width: 20em;
 }
 
 .S1 .Content .CardsContainer img:hover {
@@ -276,11 +310,11 @@ body {
 }
 
 .S1 .Content .btns {
-    position: absolute; 
-    z-index: 10; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 95%;
 }
 
@@ -327,7 +361,7 @@ body {
 
 .S2 .Cards {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 1em;
     column-gap: 3em;
     justify-content: center;
@@ -353,6 +387,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
     row-gap: .3em;
     opacity: 0;
     top: 0;
@@ -380,22 +415,36 @@ body {
     transition: all .5s;
 }
 
+@media (max-width: 1060px) {
+    .S2 .Cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .S2 .Cards {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Details */
 .Details {
+    width: 100vw;
+    height: fit-content;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: 2fr 1fr;
 }
 
 .Details .Poster {
+    width: 100%;
     grid-column: 2/3;
-    grid-row: 1/3;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 1.5em;
-    row-gap: 1em;
+    row-gap: 0em;
     position: relative;
     z-index: 10;
 }
@@ -422,8 +471,11 @@ body {
     transition: all .3s;
 }
 
-.Details .Poster .CommentSec {
-    width: 100%;
+.Details .CommentSec {
+    grid-column: 2/3;
+    padding: 1.5em;
+    width: 90%;
+    height: fit-content;
     border-radius: 1em;
     background-color: var(--black2);
     padding: .5em;
@@ -432,18 +484,18 @@ body {
     row-gap: .3em;
 }
 
-.Details .Poster .CommentSec .HEADER {
+.Details .CommentSec .HEADER {
     width: 100%;
     text-align: center;
 }
 
-.Details .Poster .CommentSec .Comments {
+.Details .CommentSec .Comments {
     display: flex;
     flex-direction: column;
     row-gap: .5em;
 }
 
-.Details .Poster .CommentSec .Comments .Comment {
+.Details .CommentSec .Comments .Comment {
     background: var(--black4);
     border-radius: 1em;
     padding: .5em;
@@ -453,7 +505,7 @@ body {
     column-gap: 1em;
 }
 
-.Details .Poster .CommentSec .Comments .Comment .IMG {
+.Details .CommentSec .Comments .Comment .IMG {
     width: 3em;
     background-color: var(--White);
     border-radius: 50%;
@@ -462,13 +514,14 @@ body {
     width: 8%;
 }
 
-.Details .Poster .CommentSec .Comments .Comment .IMG img {
+.Details .CommentSec .Comments .Comment .IMG img {
     width: 100%;
 }
 
 .Details .Info {
     grid-column: 1/2;
-    grid-row: 1/2;
+    width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -563,13 +616,15 @@ body {
 }
 
 .Details .Rating {
+    width: 100%;
     grid-column: 1/2;
-    grid-row: 2/3;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     padding: 1.5em 1em;
+    padding-top: 0;
 }
 
 .Details .Rating .TextArea textarea {
@@ -604,7 +659,7 @@ body {
     height: 100%;
 }
 
-.Details .Rating .RatingStars input:checked ~ label .star path {
+.Details .Rating .RatingStars input:checked~label .star path {
     fill: yellow;
 }
 
@@ -620,4 +675,59 @@ body {
 .FavBtn {
     cursor: pointer;
     user-select: none;
+}
+
+form {
+    width: 95%;
+}
+
+@media (max-width: 1200px){
+    .Details {
+        width: 100%;
+        grid-template-columns: 1fr;
+        place-items: center;
+        row-gap: 1em;
+    }
+
+    .Details .Info {
+        grid-column: 1/3;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Details .Poster {
+        grid-column: 1/3;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Details .Rating {
+        grid-column: 1/3;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .Details .Rating .RatingStars {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Details .Rating .TextArea textarea {
+        width: 100%;
+        margin: 0;
+    }
+
+    .Details .CommentSec {
+        grid-column: 1/3;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 1em;
+    }
 }

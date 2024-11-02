@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Style.css">
 </head>
 
-<body onload="load()">
+<body>
     <header class="Header">
         <nav class="Container">
             <div class="logo">
@@ -165,17 +165,19 @@
 
         function ToggleButton() {
             localStorage.setItem('Toggle', Input.checked);
-            if (!Input.checked) {
+            if (Input.checked === false) {
                 LigthMode();
             } else {
                 DarkMode();
             }
         }
 
-        function load() {
-            var checked = JSON.parse(localStorage.getItem('Toggle'));
-            Input.checked = !checked;
-            checked === false ? LigthMode() : DarkMode();
+        var checked = JSON.parse(localStorage.getItem('Toggle'));
+        console.log(checked);
+
+        if (checked === false) {
+            Input.checked = true;
+            LigthMode()
         }
     </script>
 
@@ -269,16 +271,17 @@
                     MoveToLeft = true;
                 }
             }
-            container.style.transform = `translateX(${CurrPosition} %)`;
+            container.style.transform = `translateX(${CurrPosition}%)`;
             container.style.transition = "ease 1s";
         }
         setInterval(Auto, 2000);
+
         function Prev() {
             if (CurrPosition === MaxRight) {
                 return;
             }
             CurrPosition += step
-            container.style.transform = `translateX(${CurrPosition} %)`;
+            container.style.transform = `translateX(${CurrPosition}%)`;
             container.style.transition = "ease 1s";
         }
         function Next() {
@@ -286,7 +289,7 @@
                 return;
             }
             CurrPosition -= step
-            container.style.transform = `translateX(${CurrPosition} %)`;
+            container.style.transform = `translateX(${CurrPosition}%)`;
             container.style.transition = "ease 1s";
         }
     </script>
@@ -506,7 +509,11 @@
             value = e.target.value.toLowerCase();
             CardToHide.forEach((data) => {
                 const DATA = data.querySelector("h3").textContent.toLowerCase();
-                DATA.includes(value) ? data.style.display = "" : data.style.display = "none";
+                if (DATA.includes(value)) {
+                    data.style.display = "";
+                } else {
+                    data.style.display = "none";
+                }
             })
         })
 
@@ -525,6 +532,7 @@
                     heart.style.fill = "red";
                     localStorage.setItem("Card" + index, CardToStock);
                     localStorage.setItem('CardStatus' + index, "filled");
+
                 }
             })
         })
