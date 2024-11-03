@@ -221,20 +221,22 @@
             e.addEventListener("click", () => {
                 if (heart.style.fill === "red") {
                     heart.style.fill = "none";
-                    for (let i = 0; i < 13; i++) {
-                        let Item = localStorage.getItem('Card' + i)
-
-                        if (Item && Item.localeCompare(CardToRemove)) {
-                            console.log(1)
-                            localStorage.removeItem('Card' + i);
-                            localStorage.setItem('CardStatus' + i, "none");
-                            break;
-                        }
-                    }
                 }
                 else {
                     heart.style.fill = "red";
                 }
+                let j = -1;
+                for (i = 0; i < 13; i++) {
+                    if (localStorage.getItem('Card' + i) !== null) {
+                        j++;
+                    }
+                    if (j === index) {
+                        localStorage.removeItem('Card' + i);
+                        localStorage.setItem('CardStatus' + i, "none");
+                        break;
+                    }
+                }
+
             })
         })
     </script>
